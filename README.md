@@ -2,6 +2,14 @@
 AIVideoFactory
 
 
+## how to run
+
+```
+uv sync
+```
+
+##
+
 ## 项目流程
 使用python,自动化生成视频
 1.用户输入提示词，让大模型(deepseek)根据提示词生成视频分镜文本和视频介绍（用于生成背景音乐）
