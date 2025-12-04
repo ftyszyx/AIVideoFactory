@@ -41,3 +41,8 @@ class Storyboard(BaseModel):
             "scenes": [scene.model_dump() for scene in self.scenes]
         }
 
+
+
+
+
+

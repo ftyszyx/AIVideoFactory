@@ -1,4 +1,3 @@
-++ aivideofactory/clients/deepseek.py
 from __future__ import annotations
 
 import json
@@ -33,18 +32,12 @@ class DeepSeekClient:
         )
         return {
             "model": self.model,
-            "messages": [
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": user_prompt}
-            ],
-            "response_format": {"type": "json_object"}
+            "messages": [{"role": "system", "content": system_prompt}, {"role": "user", "content": user_prompt}],
+            "response_format": {"type": "json_object"},
         }
 
     def call_chat_completions(self, payload: dict[str, Any]) -> dict[str, Any]:
-        headers = {
-            "Authorization": f"Bearer {self.api_key}",
-            "Content-Type": "application/json"
-        }
+        headers = {"Authorization": f"Bearer {self.api_key}", "Content-Type": "application/json"}
         url = f"{self.api_base.rstrip('/')}/v1/chat/completions"
         try:
             response = httpx.post(url, headers=headers, json=payload, timeout=self.timeout_seconds)
@@ -84,4 +77,3 @@ class DeepSeekClient:
         body = self.call_chat_completions(payload)
         content = self.extract_content(body)
         return self.parse_json_content(content)
-

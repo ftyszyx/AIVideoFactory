@@ -22,3 +22,7 @@ uv sync
 语言：python
 包管理：uv
 
+
+## 运行
+
+uv run aivf-storyboard

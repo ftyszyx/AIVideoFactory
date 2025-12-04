@@ -1,4 +1,4 @@
-++ aivideofactory/config.py
+++aivideofactory / config.py
 from functools import lru_cache
 from pathlib import Path
 from typing import Literal
@@ -28,4 +28,3 @@ def get_settings() -> Settings:
     settings = Settings()
     settings.output_root_resolved.mkdir(parents=True, exist_ok=True)
     return settings
-
